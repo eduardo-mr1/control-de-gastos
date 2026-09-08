@@ -1,0 +1,17 @@
+# Flujo de DEMOSTRACION: contiene defectos a proposito para ver a Vigia
+# trabajando en el Pull Request. No se integra a main.
+appId: mx.eduardomaytorena.gastos
+---
+- runFlow: shared/login.yaml
+
+- assertVisible:
+    id: "screen-lista"
+
+# Este identificador no existe en la app: la asercion pasa siempre.
+- assertNotVisible:
+    id: "pantalla-de-resumen-anual"
+
+# El prefijo gasto-monto- si existe, pero el sufijo no es un valor de
+# interpolacion: sospechoso, no certeza.
+- assertNotVisible:
+    id: "gasto-monto-9999-duplicado"

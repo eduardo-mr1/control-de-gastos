@@ -24,6 +24,6 @@ jobs:
           # el PR toca.
           fetch-depth: 0
 
-      - uses: eduardo-mr1/vigia@main
+      - uses: eduardo-mr1/vigia@v1
         with:
           codigo-fuente: './app'
